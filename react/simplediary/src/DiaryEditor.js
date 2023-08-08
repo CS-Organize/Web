@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const DiaryEditor = ({onCreate}) => {
+const DiaryEditor = ({ onCreate }) => {
+
 	const authorInput = useRef(); // DOM을 직접 선택해야 할 때 사용
 	const contentInput = useRef();
 
@@ -77,4 +78,4 @@ const DiaryEditor = ({onCreate}) => {
 	);
 };
 
-export default DiaryEditor;
+export default React.memo(DiaryEditor);
