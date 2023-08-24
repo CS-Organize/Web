@@ -47,7 +47,7 @@ function taskC(a, callback) {
 // 	console.log(`C 작업 끝 : ${result}`)
 // );
 
-taskA(4, 5, (a_res) => { // 비동기 처리의 결과값을 다음 비동기 처리의 인자로 넘겨줄 수 있다. -> 콜백 지옥
+taskA(4, 5, (a_res) => { // 비동기 처리의 결과값을 다음 비동기 처리의 인자로 넘겨줌 -> 코드가 깊어짐 -> 콜백 지옥
 	console.log(`A 작업 끝 : ${a_res}`);
 	taskB(a_res, (b_res) => {
 		console.log(`B 작업 끝 : ${b_res}`);
