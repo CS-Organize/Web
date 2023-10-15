@@ -1,22 +1,22 @@
-/* let a;
+let a;
 
 if (a) { // falsy한 값: false, 0, "", null, undefined, NaN
 	console.log("true");
 } else { // truthy한 값: falsy한 값이 아닌 모든 값
 	console.log("false");
-} */
+}
 
-/* // const getName = (person) => {
-// 	if (!person) { // person이 null 또는 undefined일 경우
-// 		return "person이 없습니다.";
-// 	} else {
-// 		return person.name;
-// 	}
-// }
+const getName = (person) => {
+	if (!person) { // person이 null 또는 undefined일 경우
+		return "person이 없습니다.";
+	} else {
+		return person.name;
+	}
+}
 
-// const getName = (person) => {
-// 	return person && person.name; // 단락회로 평가, person이 null 또는 undefined일 경우 person.name을 평가하지 않고 바로 false를 반환한다.
-// }
+const getName = (person) => {
+	return person && person.name; // 단락회로 평가, person이 null 또는 undefined일 경우 person.name을 평가하지 않고 바로 false를 반환한다.
+}
 
 const getName = (person) => {
 	const name = person && person.name; // 단락회로 평가, person이 null 또는 undefined일 경우 person.name을 평가하지 않고 바로 false를 반환한다.
@@ -28,9 +28,9 @@ const getName = (person) => {
 let person;
 const name = getName(person);
 
-console.log(name); */
+console.log(name);
 
-/* let a = [];
+let a = [];
 const arrStatus = a.length === 0 ? "빈 배열" : "한 개 이상 들어있는 배열"; // 삼항 연산자
 console.log(arrStatus);
 
@@ -39,9 +39,9 @@ score >= 90 // 삼항 연산자 중첩 가능 하지만 가독성이 떨어진�
 	? console.log("A")
 	: score >= 50
 	? console.log("B")
-	: console.log("C"); */
+	: console.log("C");
 
-/* function isKoreanFood(food) {
+function isKoreanFood(food) {
 	if (["김치찌개", "비빔밥", "된장찌개"].includes(food)) // includes 메서드는 배열에 특정 요소가 포함되어 있는지 확인한다.
 		return true;
 	return false;
@@ -59,12 +59,12 @@ const getMeal = (mealType) => {
 	return meal[mealType] || "해당하는 식사가 없습니다.";
 }
 
-console.log(getMeal("한식")); */
+console.log(getMeal("한식"));
 
 
-// let arr = ["one", "two", "three"];
-// let [one, two, three] = arr; // 배열 디스트럭처링 할당
-/* let [one, two, three, four = "four"] = ["one", "two", "three"];
+let arr = ["one", "two", "three"];
+let [one, two, three] = arr; // 배열 디스트럭처링 할당
+let [one, two, three, four = "four"] = ["one", "two", "three"];
 console.log(one, two, three, four);
 
 let a = 10, b = 20;
@@ -78,9 +78,9 @@ let obj = {
 }
 
 let {one : able_chg, two, three, four = "four"} = obj; // 객체 디스트럭처링 할당 (key 값이 일치해야 한다.)
-console.log(able_chg, two, three, four); */
+console.log(able_chg, two, three, four);
 
-/* const cookie = {
+const cookie = {
 	base : "cookie",
 	madeIn : "korea",
 }
@@ -100,4 +100,4 @@ const topingCookies = ["바나나 쿠키", "초코 쿠키", "딸기 쿠키"];
 
 const allCookies = [...noTopingCookies, "함정 쿠키", ...topingCookies]; // 배열 합치기
 
-console.log(allCookies); */
+console.log(allCookies);
