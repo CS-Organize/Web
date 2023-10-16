@@ -42,16 +42,16 @@
 				<button id="close">CLOSE</button>
 			</div>
 		</div>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$("#popshow").click(function () {
+				$(".popup").show();
+			});
+			$("#close").click(function () {
+				// $('.popup').hide();
+				// $(this).parent().parent().hide();
+				$(this).parents(".popup").hide();
+			});
+		</script>
 	</body>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$('#popshow').click(function () {
-			$('.popup').show();
-		});
-		$('#close').click(function () {
-			// $('.popup').hide();
-			// $(this).parent().parent().hide();
-			$(this).parents('.popup').hide();
-		});
-	</script>
 </html>
