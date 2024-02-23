@@ -10,8 +10,8 @@ console.log(infinity);
 console.log(min_infinity);
 console.log(nan);
 
-let name = "seoji";
-let name2 = `${name} babo`;
+let name = "seunan";
+let name2 = `${name} babo`; // 백틱을 이용해 문자열을 템플릿화할 수 있다.
 
 console.log(name);
 console.log(name2);
@@ -30,9 +30,9 @@ console.log(nullVariable);
 
 let numberA = 12;
 let numberB = "2";
-console.log(numberA + numberB);
-console.log(numberA + parseInt(numberB));
-console.log(numberA * numberB);
+console.log(`numberA + numberB = ${numberA + numberB}`);
+console.log(`numberA + parseInt(numberB) = ${numberA + parseInt(numberB)}`);
+console.log(`numberA * numberB = ${numberA * numberB}`);
 
 let a;
 a = a ?? 10; // null 병합 연산자, a가 null 또는 undefined일 경우 10을 반환한다.
@@ -43,25 +43,29 @@ console.log("-------------------------------------------------\n");
 console.log("---------------------function--------------------");
 
 console.log(helloA()); // 함수 선언식은 호이스팅이 가능하다. 호이스팅이란 선언문이나 함수 선언식을 해당 스코프의 최상단으로 끌어올리는 것을 말한다.
-// console.log(helloB());
+// console.log(helloB()); // 함수 표현식은 호이스팅이 불가능하다.
+// console.log(helloC()); // 화살표 함수는 호이스팅이 불가능하다. 함수 표현식과 동일하다.
 
 function helloA() {
-	return "hello";
+	return "helloA";
 } // 함수 선언식
 
 let helloB = function () {
-	return "hello";
+	return "helloB";
 }; // 함수 표현식
 
 console.log(helloB());
 
-let helloC = () => { // 화살표 함수, 무명 함수를 간단하게 표현할 수 있다.
-	return "hello";
-}
+let helloC = () => {
+	return "helloC";
+}; // 화살표 함수, 무명 함수를 간단하게 표현할 수 있다. function 키워드를 생략할 수 있다.
 
-let helloD = () => "hello"; // return문만 있을 경우 중괄호와 return을 생략할 수 있다.
+let helloD = () => "helloD"; // return문만 있을 경우 중괄호와 return을 생략할 수 있다.
 
-console.log(helloC()+"\n"+helloD());
+let helloE = (name) => `hello, ${name}`; // 매개변수가 하나일 경우 괄호를 생략할 수 있다. 함수의 몸체가 표현식일 경우 중괄호와 return을 생략할 수 있다.
+
+console.log(helloC() + "\n" + helloD());
+console.log(helloE("seunan"));
 
 function cry() {
 	console.log("ACTION :: CRY");
@@ -75,7 +79,8 @@ function dance() {
 	console.log("ACTION :: DANCE");
 }
 
-function checkMood(mood, goodCallback, badCallback) { // 콜백함수란 함수를 인자로 받아 특정 작업이 끝났을 때 실행시키는 함수를 말한다.
+function checkMood(mood, goodCallback, badCallback) {
+	// 콜백함수란 함수를 인자로 받아 특정 작업이 끝났을 때 실행시키는 함수를 말한다.
 	if (mood === "happy") {
 		goodCallback();
 	} else {
@@ -93,31 +98,31 @@ let obj = new Object(); // 객체 생성자 함수를 이용한 객체 생성
 let obj1 = {}; // 객체 리터럴을 이용한 객체 생성
 
 let obj2 = {
-	key : "value", // key : value 형태로 객체의 속성을 정의, object property
-	key1 : "value1",
-	key2 : true,
-	key3 : undefined,
-	key4 : [1, 2, 3],
-	key5 : function () {
+	key: "value", // key : value 형태로 객체의 속성을 정의, object property
+	key1: "value1",
+	key2: true,
+	key3: undefined,
+	key4: [1, 2, 3],
+	key5: function () {
 		console.log("hello");
 	},
-	key : "new value" // 객체의 속성은 중복될 수 없다. 중복될 경우 마지막에 정의된 속성이 덮어쓴다.
+	key: "new value", // 객체의 속성은 중복될 수 없다. 중복될 경우 마지막에 정의된 속성이 덮어쓴다.
 };
 
 console.log(obj2.key); // 점 표기법을 이용한 속성 접근
 console.log(obj2["key"]); // 괄호 표기법을 이용한 속성 접근
 let propertyName = "key";
-console.log(obj2[propertyName]); // 괄호 표기법을 이용한 속성 접근
+console.log(obj2[propertyName]); // 변수 또는 표현식을 이용한 속성 접근을 할 때는 괄호 표기법을 사용해야 한다.
 
 const person = {
-	name : "seunan", // 함수가 아닌 property -> Member
-	age : 23,
-	say : function () {
+	name: "seunan", // 함수가 아닌 property -> Member
+	age: 24,
+	say: function () {
 		console.log(`hello, my name is ${this.name}`); // this는 객체 자신을 가리킨다.
-	} // 함수인 property -> Method
+	}, // 함수인 property -> Method
 };
 
-person["gender"] = "man" // const로 선언된 객체 자체를 변경하는 것은 불가능하지만 객체의 속성을 변경하는 것은 가능하다.
+person["gender"] = "man"; // const로 선언된 객체 자체를 변경하는 것은 불가능하지만 객체의 속성을 변경하는 것은 가능하다.
 person.location = "seoul"; // 객체의 속성을 동적으로 추가할 수 있다.
 
 /* person = {
@@ -152,11 +157,11 @@ console.log("----------------------array----------------------");
 let firstArr = new Array(1, 2, 3, 4); // 배열 생성자 함수를 이용한 배열 생성
 let randArr = [1, "2", true, null, undefined, {}, [], function () {}]; // 배열 리터럴을 이용한 배열 생성
 
-console.log(randArr);
-
 firstArr.push(5); // 배열의 끝에 요소를 추가한다.
 
 console.log(firstArr.length); // 배열의 길이를 반환한다.
+
+console.log(randArr);
 
 const personKeys = Object.keys(person); // 객체의 속성들을 배열로 반환한다.
 const personValues = Object.values(person); // 객체의 속성들의 값을 배열로 반환한다.
@@ -175,10 +180,10 @@ console.log(numArr.includes(3)); // 배열에 특정 요소가 있는지 확인�
 console.log(numArr.indexOf("3")); // 배열에 특정 요소가 있는지 확인하고 있을 경우 해당 요소의 인덱스를, 없으면 -1을 반환한다.
 
 const arr = [
-	{ num : 1, color : "red" },
-	{ num : 2, color : "blue" },
-	{ num : 3, color : "green" },
-	{ num : 4, color : "yellow" },
+	{ num: 1, color: "red" },
+	{ num: 2, color: "blue" },
+	{ num: 3, color: "green" },
+	{ num: 4, color: "yellow" },
 ];
 
 console.log(
@@ -220,3 +225,23 @@ const cArr = ["안승원", "님", "안녕하세요", "반갑습니다"];
 console.log(cArr.join(" ")); // 배열의 요소들을 구분자(default는 ,)를 이용해 하나의 문자열로 합친다.
 
 console.log("-------------------------------------------------\n");
+
+console.log("-----------------------class---------------------\n");
+
+// 객체의 속성과 메서드를 정의한 클래스
+class Human {
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	say() {
+		console.log(
+			`hello, my name is ${this.name} and I'm ${this.age} years old.`
+		);
+	}
+}
+
+// 클래스를 사용하기 위해서 인스턴스를 생성해야 한다.
+const seunan = new Human("seunan", 24);
+seunan.say();

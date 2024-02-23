@@ -1,12 +1,12 @@
 let a;
 
-if (a) { // falsy한 값: false, 0, "", null, undefined, NaN
-	console.log("true");
-} else { // truthy한 값: falsy한 값이 아닌 모든 값
-	console.log("false");
+if (a) { // truthy한 값: falsy한 값이 아닌 모든 값
+	console.log("truthy");
+} else { // falsy한 값: false, 0, "", null, undefined, NaN
+	console.log("falsy");
 }
 
-const getName = (person) => {
+const getName1 = (person) => {
 	if (!person) { // person이 null 또는 undefined일 경우
 		return "person이 없습니다.";
 	} else {
@@ -14,24 +14,29 @@ const getName = (person) => {
 	}
 }
 
-const getName = (person) => {
+const getName2 = (person) => {
 	return person && person.name; // 단락회로 평가, person이 null 또는 undefined일 경우 person.name을 평가하지 않고 바로 false를 반환한다.
 }
 
-const getName = (person) => {
+const getName3 = (person) => {
 	const name = person && person.name; // 단락회로 평가, person이 null 또는 undefined일 경우 person.name을 평가하지 않고 바로 false를 반환한다.
 	return name || "객체가 아닙니다."; // name이 falsy한 값일 경우 "객체가 아닙니다."를 반환한다.
 }
 
-// const getName = (person) => person?.name ?? "person이 없습니다."; // 옵셔널 체이닝 연산자, 널 병합 연산자
+const getName4 = (person) => person?.name ?? "person이 없습니다."; // 옵셔널 체이닝 연산자, 널 병합 연산자
 
 let person;
-const name = getName(person);
-
+let name = getName1(person);
+console.log(name);
+name = getName2(person);
+console.log(name);
+name = getName3(person);
+console.log(name);
+name = getName4(person);
 console.log(name);
 
-let a = [];
-const arrStatus = a.length === 0 ? "빈 배열" : "한 개 이상 들어있는 배열"; // 삼항 연산자
+let b = [];
+const arrStatus = b.length === 0 ? "빈 배열" : "한 개 이상 들어있는 배열"; // 삼항 연산자
 console.log(arrStatus);
 
 let score = 50;
@@ -47,6 +52,8 @@ function isKoreanFood(food) {
 	return false;
 }
 
+console.log(`isKoreanFood("김치찌개") = ${isKoreanFood("김치찌개")}`);
+
 const meal = {
 	한식 : "김치찌개",
 	중식 : "짜장면",
@@ -60,16 +67,16 @@ const getMeal = (mealType) => {
 }
 
 console.log(getMeal("한식"));
-
+console.log(getMeal("채식"));
 
 let arr = ["one", "two", "three"];
-let [one, two, three] = arr; // 배열 디스트럭처링 할당
-let [one, two, three, four = "four"] = ["one", "two", "three"];
-console.log(one, two, three, four);
+let [one1, two1, three1] = arr; // 배열 디스트럭처링 할당
+let [one2, two2, three2, four2 = "four"] = ["one", "two", "three"];
+console.log(one1, two1, three1, four2);
 
-let a = 10, b = 20;
-[a, b] = [b, a]; // 배열 디스트럭처링 할당을 이용한 변수 값 교환
-console.log(a, b);
+let c = 10, d = 20;
+[c, d] = [d, c]; // 배열 디스트럭처링 할당을 이용한 변수 값 교환
+console.log(c, d);
 
 let obj = {
 	one : "one",
@@ -77,7 +84,7 @@ let obj = {
 	three : "three",
 }
 
-let {one : able_chg, two, three, four = "four"} = obj; // 객체 디스트럭처링 할당 (key 값이 일치해야 한다.)
+let {one : able_chg, two, three, four = "four"} = obj; // 객체 디스트럭처링 할당 (key 값이 일치해야 한다.), : 를 이용해 변수명을 변경할 수 있다.
 console.log(able_chg, two, three, four);
 
 const cookie = {
