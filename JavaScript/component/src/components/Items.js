@@ -19,17 +19,14 @@ export default class Items extends Component {
     `;
   }
   setEvent() {
-    this.$target.querySelector(".addBtn").addEventListener("click", () => {
+    this.addEvent("click", ".addBtn", ({ target }) => {
       const { items } = this.state;
       this.setState({ items: [...items, `item${items.length + 1}`] });
     });
-    
-    this.$target.querySelectorAll(".deleteBtn").forEach((deleteBtn, index) => {
-      deleteBtn.addEventListener("click", () => {
-        const { items } = this.state;
-        items.splice(index, 1);
-        this.setState({ items });
-      });
+    this.addEvent("click", ".deleteBtn", ({ target }) => {
+      const items = [...this.state.items];
+      items.splice(target.dataset.index, 1);
+      this.setState({ items });
     });
   }
 }
