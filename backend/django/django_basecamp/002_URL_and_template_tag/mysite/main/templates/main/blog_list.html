@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog List</title>
+    </head>
+    <body>
+        <h1>Blog List Page</h1>
+        <ul>
+            {# 주석 #} 
+            {# {% 파이썬 문법 사용 %} #}
+            {# {{ 파이썬 변수 사용 }} #}
+            {% for blog in blog_list %}
+            <li>
+                <a href="/blog/{{ blog.id }}/">{{ blog.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
