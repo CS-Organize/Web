@@ -1,0 +1,43 @@
+/* selector {
+  property: value;
+} */
+
+/* Universal selector */
+* {
+  color: green;
+}
+
+/* Type selector */
+li {
+  color: blue;
+}
+div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+/* ID selector */
+#special {
+  color: pink ;
+}
+
+/* Class selector */
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+
+/* State selector */
+
+button:hover {
+  background-color: yellow;
+}
+
+/* Attribute selector */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors */
+a[href] {
+  color: purple;
+}
