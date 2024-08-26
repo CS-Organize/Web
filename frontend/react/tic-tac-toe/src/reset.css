@@ -19,7 +19,6 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
   /* HTML5 display-role reset for older browsers */
@@ -29,6 +28,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
 }
 ol, ul {
   list-style: none;
@@ -48,6 +50,7 @@ table {
 /* My custom reset */
 * {
   box-sizing: border-box;
+  font-family: inherit;
 }
 a {
   text-decoration: none;
@@ -80,8 +83,5 @@ input:focus {
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #191B1C;
-  color: #fff;
-  overflow-x: hidden
 }
 /* End of custom reset */

@@ -1,0 +1,37 @@
+body {
+  background-color: #111;
+  color: #fff;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+main {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+#status {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.board-row {
+  max-height: 100px;
+}
+
+.square {
+  float: left;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+}
