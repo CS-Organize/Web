@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- https://ko.legacy.reactjs.org/docs/add-react-to-a-website.html -->
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script>
+    const root = document.querySelector("#root");
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+    root.style.height = "100vh";
+    let num = 0;
+    // React.createElement(태그, 속성, 자식)
+    const paragraph = React.createElement(
+      "p",
+      {
+        id: "this-is-paragraph",
+        style: {
+          color: "red",
+        },
+      },
+      "0"
+    );
+    const btn = React.createElement(
+      "button",
+      {
+        id: "numBtn",
+        onClick: () => {
+          console.log("click");
+        },
+      },
+      "Click me"
+    );
+    const app = React.createElement("div", { id: "app" }, [paragraph, btn]);
+    // ReactDOM.render(렌더링할 JSX, 컴포넌트가 렌더링될 DOM)
+    ReactDOM.render(app, root);
+  </script>
+</html>

@@ -8,18 +8,18 @@ console.log(firstArr.length); // 배열의 길이를 반환한다.
 console.log(randArr);
 
 const person = {
-	name: "seunan", // 함수가 아닌 property -> Member
-	age: 24,
-	say: function () {
-		console.log(`hello, my name is ${this.name}`); // this는 객체 자신을 가리킨다.
-	}, // 함수인 property -> Method
+  name: "seunan", // 함수가 아닌 property -> Member
+  age: 24,
+  say: function () {
+    console.log(`hello, my name is ${this.name}`); // this는 객체 자신을 가리킨다.
+  }, // 함수인 property -> Method
 };
 
 const personKeys = Object.keys(person); // 객체의 속성들을 배열로 반환한다.
 const personValues = Object.values(person); // 객체의 속성들의 값을 배열로 반환한다.
 
 for (let i = 0; i < personKeys.length; i++) {
-	console.log(`${personKeys[i]} : ${personValues[i]}`);
+  console.log(`${personKeys[i]} : ${personValues[i]}`);
 }
 
 const numArr = [1, 2, 3, 4, 5];
@@ -32,16 +32,16 @@ console.log(numArr.includes(3)); // 배열에 특정 요소가 있는지 확인�
 console.log(numArr.indexOf("3")); // 배열에 특정 요소가 있는지 확인하고 있을 경우 해당 요소의 인덱스를, 없으면 -1을 반환한다.
 
 const arr = [
-	{ num: 1, color: "red" },
-	{ num: 2, color: "blue" },
-	{ num: 3, color: "green" },
-	{ num: 4, color: "yellow" },
+  { num: 1, color: "red" },
+  { num: 2, color: "blue" },
+  { num: 3, color: "green" },
+  { num: 4, color: "yellow" },
 ];
 
 console.log(
-	arr.findIndex((elm) => {
-		return elm.color === "red";
-	})
+  arr.findIndex((elm) => {
+    return elm.color === "red";
+  })
 );
 
 const idx = arr.findIndex((elm) => elm.color === "red"); // 배열의 첫 요소부터 순회하며 콜백함수를 실행한 결과가 true가 되는 요소의 인덱스를 반환한다.
@@ -62,9 +62,9 @@ let numbers = [0, 1, 3, 2, 10, 30, 20];
 console.log(numbers.sort()); // sort() 메서드는 기본적으로 유니코드 순서로 정렬한다.
 
 const compare = (a, b) => {
-	if (a > b) return 1; // 콜백함수의 반환값이 0보다 크면 a를 b보다 뒤로 정렬한다.
-	if (a === b) return 0; // 콜백함수의 반환값이 0이면 a와 b의 순서를 바꾸지 않는다.
-	if (a < b) return -1; // 콜백함수의 반환값이 0보다 작으면 a를 b보다 앞으로 정렬한다.
+  if (a > b) return 1; // 콜백함수의 반환값이 0보다 크면 a를 b보다 뒤로 정렬한다.
+  if (a === b) return 0; // 콜백함수의 반환값이 0이면 a와 b의 순서를 바꾸지 않는다.
+  if (a < b) return -1; // 콜백함수의 반환값이 0보다 작으면 a를 b보다 앞으로 정렬한다.
 };
 
 numbers.sort(compare); // 숫자를 오름차순으로 정렬하려면 콜백함수를 이용해야 한다.

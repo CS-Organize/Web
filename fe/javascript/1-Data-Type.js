@@ -5,7 +5,7 @@ let infinity = Infinity;
 let negInfinity = -Infinity;
 let nan = NaN;
 
-console.log(`integer: [${integer}\ninfinity: ${infinity}\nnegInfinity: ${negInfinity}\nnan: ${nan}`);
+console.log(`integer: ${integer}\ninfinity: ${infinity}\nnegInfinity: ${negInfinity}\nnan: ${nan}`);
 
 // String
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- https://ko.legacy.reactjs.org/docs/add-react-to-a-website.html -->
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <!-- https://babeljs.io/docs/babel-standalone -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const root = document.querySelector("#root");
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+    root.style.height = "100vh";
+
+    // JSX
+    const Paragraph = () => {
+      return (
+        <p
+          id="this-is-paragraph"
+          style={{ color: "red" }}
+          onMouseEnter={() => {
+            console.log("mouse enter");
+          }}
+        >
+          0
+        </p>
+      );
+    };
+    const Button = () => {
+      return (
+        <button
+          id="numBtn"
+          onClick={() => {
+            console.log("click");
+          }}
+        >
+          Click me
+        </button>
+      );
+    };
+
+    const App = () => {
+      return (
+        <div id="app">
+          <Paragraph />
+          <Button />
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
