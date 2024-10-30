@@ -12,6 +12,10 @@
 
 <img src="https://img-c.udemycdn.com/course/480x270/4297574_42d1_4.jpg" alt="Udemy" width="300px;">
 
+### [Velopert 리액트를 다루는 기술](https://product.kyobobook.co.kr/detail/S000001792882)
+
+<img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791160508796.jpg" alt="Kyobo" width="300px;">
+
 ## Tips
 
 지식을 학습하기보다는 많은 프로젝트를 진행하면서 얻는 것이 더 많았습니다.

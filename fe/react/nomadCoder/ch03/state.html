@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- https://ko.legacy.reactjs.org/docs/add-react-to-a-website.html -->
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <!-- https://babeljs.io/docs/babel-standalone -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    const root = document.querySelector("#root");
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+    root.style.height = "100vh";
+
+    let cnt = 0;
+    const cntUp = () => {
+      cnt++;
+      ReactDOM.render(<App />, root);
+    }
+
+    const App = () => {
+      return (
+        <div id="app">
+          <p>{cnt}</p>
+          <button onClick={cntUp}>Click me</button>
+        </div>
+      );
+    };
+
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

@@ -4,13 +4,9 @@ import json
 
 graph_config = {
     "llm": {
-        "model": "ollama/mistral-nemo",
+        "model": "ollama/llama3.2",
         "temperature": 0,
         "format": "json",  # Ollama needs the format to be specified explicitly
-        "base_url": "http://localhost:11434",  # set Ollama URL
-    },
-    "embeddings": {
-        "model": "ollama/nomic-embed-text",
         "base_url": "http://localhost:11434",  # set Ollama URL
     },
     "verbose": True,

@@ -1,0 +1,24 @@
+{
+  "title": "ScrapeGraphAI",
+  "description": "A Python library for scraping leveraging large language models",
+  "url": "https://github.com/VinciGit00/Scrapegraph-ai",
+  "license": "MIT License",
+  "contributors": 76,
+  "languages": ["Python"],
+  "footer": {
+    "copyright": "2024 GitHub, Inc.",
+    "footer_navigation": [
+      "Terms",
+      "Privacy",
+      "Security",
+      "Status",
+      "Docs",
+      "Contact"
+    ],
+    "manage_cookies": "Do not share my personal information"
+  },
+  "releases": 310,
+  "stars": 15200,
+  "watchers": 102,
+  "forks": 1200
+}
